@@ -5,9 +5,9 @@ function Header() {
 
     return (
       <>
-        <div >
+        <div>
           <div className='h1-main'>
-            <h1>Teknolojik Yemekler</h1>
+            <img src='/Assets/Iteration-1-assets/logo.svg'></img>
           </div>
           <div className='h1-content'>
           <p className='p-secondary'>Ansayfa - Seçenekler - <strong>Sipariş Oluştur</strong></p>

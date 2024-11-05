@@ -25,6 +25,7 @@ function Size({onChange, value}) {
                 </label>
                 </div>
             </div>
+            
             <div className='size-hamur'>
             <label htmlFor="dough" className='title-hamur'>Hamur Seç <span className='span-hamur'>*</span></label>
                 <select id="dough" name="dough" defaultValue={"-1"} value={value} onChange={onChange} >

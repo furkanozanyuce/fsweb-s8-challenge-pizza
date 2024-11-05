@@ -119,6 +119,8 @@ h2 {
   display: flex;
   margin: 0 auto;
   max-width: 500px;
+  padding-bottom: 10px;
+  gap: 5px;
 }
 
 .span- {
@@ -195,6 +197,23 @@ h2 {
  
 }
 
+.note {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 40px;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 40px;
+  border-bottom: solid 1px var(--color-light-gray);
+}
+
+.order-container {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
 
 
 
