@@ -69,38 +69,39 @@ h1 {
 }
 
 body {
-    background-color: white;
-    color: var(--color-dark-gray);
+  background-color: white;
+  color: var(--color-dark-gray);
+  min-height: 100vh;
 }
 
 h2 {
-    font-family: "Barlow";
+  font-family: "Barlow";
 }
 
 .p {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
     
 }
 
 .main {
-    max-width: 500px;
-    margin: 0 auto;
-    padding-top: 40px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 40px;
 }
 
 .money {
-    color: var(--color-dark-gray);
-    font-family: "Barlow";
-    font-size: 1.5rem;
-    font-weight: bold;
+  color: var(--color-dark-gray);
+  font-family: "Barlow";
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .second {
-    color: var(--color-light-gray);
-    margin-top: 5px;
-    font-family: "Barlow";
+  color: var(--color-light-gray);
+  margin-top: 5px;
+  font-family: "Barlow";
 }
 
 .secondary {
@@ -109,9 +110,62 @@ h2 {
   gap: 10px;
 }
 
+.p-secondary {
+  display: flex;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.span- {
+  font-weight: bold;
+}
+
 .p-long {
   color: var(--color-light-gray);
 }
+
+.size-main {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.size-boyut {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.size-boyut2 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.size-boyut2 label {
+  display: flex;
+  gap: 10px;
+}
+
+.size-hamur {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title-hamur {
+  font-family: "Barlow";
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.span-hamur {
+  color: var(--color-red);
+}
+
+
 
 
 

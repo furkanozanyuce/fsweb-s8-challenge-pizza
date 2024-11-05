@@ -1,5 +1,6 @@
 import Header from './Header';
 import Form2 from './Form2';
+import Size from './Size';
 
 function Form() {
   
@@ -7,6 +8,7 @@ function Form() {
       <>
         <Header />
         <Form2 />
+        <Size />
       </>
     )
   }
