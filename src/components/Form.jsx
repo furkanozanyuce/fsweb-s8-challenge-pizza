@@ -46,6 +46,9 @@ const extras = [{
 }, {
   value: "kabak",
   label: "Kabak"
+}, {
+  value: "peynir",
+  label: "Peynir"
 }
 ];
 
