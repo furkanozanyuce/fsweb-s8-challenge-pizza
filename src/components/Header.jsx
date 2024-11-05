@@ -5,11 +5,13 @@ function Header() {
 
     return (
       <>
-        <div>
+        <div >
           <div className='h1-main'>
-          <h1>Teknolojik Yemekler</h1>
-        </div>
-        <p className='p-secondary'>Ansayfa - Seçenekler - <span className='span-'>Sipariş Oluştur</span></p>
+            <h1>Teknolojik Yemekler</h1>
+          </div>
+          <div className='h1-content'>
+          <p className='p-secondary'>Ansayfa / Seçenekler / <strong>Sipariş Oluştur</strong></p>
+          </div>
         </div>
       </>
     )
