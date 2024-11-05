@@ -54,14 +54,18 @@
   font-style: normal;
 }
 
+.h1-main {
+  background-color: var(--color-red);
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 30px 0 30px 0;
+}
+
 h1 {
-    font-family: "Roboto Condensed";
-    background-color: var(--color-red);
-    color: white;
-    margin: 0;
-    padding: 60px;
-    text-align: center;
-    font-size: 2.4rem;
+  color: white;
+  font-family: "Roboto Condensed";
+  font-size: 2.4rem;
 }
 
 body {
@@ -75,13 +79,15 @@ h2 {
 
 .p {
     display: flex;
-    gap: 200px;
+    justify-content: space-between;
     padding-top: 40px;
     
 }
 
 .main {
-    margin-left: 700px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 40px;
 }
 
 .money {
@@ -97,14 +103,15 @@ h2 {
     font-family: "Barlow";
 }
 
-.p-long {
-    margin-right: 650px;
-    margin-top: 40px;
-    text-align: left;
-    color: var(--color-light-gray);
-    font-family: "Barlow";
+.secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+.p-long {
+  color: var(--color-light-gray);
+}
 
 
 

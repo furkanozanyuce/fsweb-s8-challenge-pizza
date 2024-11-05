@@ -5,7 +5,9 @@ function Header() {
 
     return (
       <>
-        <h1>Teknolojik Yemekler</h1>
+        <div className='h1-main'>
+          <h1>Teknolojik Yemekler</h1>
+        </div>
       </>
     )
   }
