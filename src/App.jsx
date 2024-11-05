@@ -1,15 +1,141 @@
+import './style.css';
+import './reset.css';
 import { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import reactLogo from './assets/react.svg';
-import workintech from '/workintech.svg';
+import Header from './components/Header';
 import Form from './components/Form';
+import Size from './components/Size';
+import Extra from './components/Extra';
+import Note from './components/Note';
+
+
+const extras = [{
+  value: "pepperoni",
+  label: "Pepperoni"
+}, {
+  value: "sosis",
+  label: "Sosis"
+}, {
+  value: "kanadaJambonu",
+  label: "Kanada Jambonu"
+}, {
+  value: "tavukIzgara",
+  label: "Tavuk Izgara"
+}, {
+  value: "sogan",
+  label: "Soğan"
+}, {
+  value: "domates",
+  label: "Domates"
+}, {
+  value: "misir",
+  label: "Mısır"
+}, {
+  value: "sucuk",
+  label: "Sucuk"
+}, {
+  value: "jalepeno",
+  label: "Jalepeno"
+}, {
+  value: "sarimsak",
+  label: "Sarımsak"
+}, {
+  value: "biber",
+  label: "Biber"
+}, {
+  value: "zeytin",
+  label: "Zeytin"
+}, {
+  value: "ananas",
+  label: "Ananas"
+}, {
+  value: "kabak",
+  label: "Kabak"
+}, {
+  value: "peynir",
+  label: "Peynir"
+}
+];
+
+const initalHamur = [
+    {name: "İnce"},
+    {name: "Normal"},
+    {name: "Kalın"}
+]
+
+const initialData = {
+  "isim": "string",
+  "boyut": "string",
+  "malzemeler": [],
+  "özel": "string",
+  "quantity": 1,
+  "extraCost": 0,
+  "totalPrice": 85.50
+}
 
 function App() {
 
+  const [formData, setFormData] = useState(initialData);
+
+  function handleChange(event) {
+    const {type, name, value, checked} = event.target
+    console.log(type, name, value, checked)
+
+    setFormData(prevData => {
+      let newExtrasCost = prevData.extraCost;
+      let newMalzemeler = [...prevData.malzemeler];
+
+      if (type === "checkbox" && name === "malzemeler") {
+        if (checked) {
+          newMalzemeler.push(value);
+          newExtrasCost += 5;
+        } else {
+          newMalzemeler = newMalzemeler.filter(item => item !== value);
+          newExtrasCost -= 5;
+        }
+      }
+
+      const updatedTotalPrice = (prevData.quantity * 85.50) + newExtrasCost;
+
+      return {
+        ...prevData,
+        [name]: name === "malzemeler" ? newMalzemeler : value,
+        extraCost: newExtrasCost,
+        totalPrice: updatedTotalPrice
+      };
+    });
+  }
+
+  function handleQuantityChange(amount) {
+    setFormData(prevData => {
+      const newQuantity = Math.max(1, prevData.quantity + amount);
+      const updatedTotalPrice = (newQuantity * 85.50) + prevData.extraCost;
+
+      return {
+        ...prevData,
+        quantity: newQuantity,
+        totalPrice: updatedTotalPrice
+      };
+    });
+  }
+
   return (
     <>
-      <Form />
-    </>
+        <Header />
+        <Form />
+        <Size onChange={handleChange} value={initalHamur.name}/>
+        <div className='extra-css'>
+          <h2>Ek Malzemeler</h2>
+          <p className='p-long'>En fazla 10 mazleme seçebilirsiniz. 5TL</p>
+          <div className='size-boyut3'>
+            {extras.map((extra, ind) => (
+            <Extra key={ind} onChange={handleChange} checked={formData.malzemeler.includes(extra.value)} name="malzemeler" value={extra.value} label={extra.label}  />
+            ))}
+          </div>
+        
+        </div>
+        <Note quantity={formData.quantity} totalPrice={formData.totalPrice} onIncrement={() => handleQuantityChange(1)} onDecrement={() => handleQuantityChange(-1)} />
+      </>
   )
 }
 
