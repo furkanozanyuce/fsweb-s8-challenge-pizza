@@ -10,7 +10,7 @@ function Header() {
             <h1>Teknolojik Yemekler</h1>
           </div>
           <div className='h1-content'>
-          <p className='p-secondary'>Ansayfa / Seçenekler / <strong>Sipariş Oluştur</strong></p>
+          <p className='p-secondary'>Ansayfa - Seçenekler - <strong>Sipariş Oluştur</strong></p>
           </div>
         </div>
       </>
