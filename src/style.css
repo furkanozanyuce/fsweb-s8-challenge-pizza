@@ -195,6 +195,14 @@ h2 {
   padding-top: 30px;
 }
 
+.extra-label {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
 .note {
   display: flex;
   max-width: 500px;

@@ -168,10 +168,12 @@ function MainForm() {
         <FormGroup>
             <Size onChange={handleChange} value={initalHamur.name}/>
         </FormGroup>
-        <FormGroup className='extra-css' check>
-                <Label><h2>Ek Malzemeler</h2>
+        <div className='extra-label'>
+        <Label><h2>Ek Malzemeler</h2>
                 <p className='p-long'>En az 4, en fazla 10 adet ekstra malzeme seçebilirsiniz! 5₺</p>
                 </Label>
+        </div>
+        <FormGroup className='extra-css' check>
                 <div className='size-boyut3'>
                     {extras.map((extra, ind) => (
                     <div key={ind} className="extra-checkbox">
