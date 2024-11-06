@@ -15,7 +15,6 @@ import axios from 'axios';
 
 import Size from './components/Size';
 import Extra from './components/Extra';
-import Note from './components/Note';
 
 
 const extras = [{
@@ -73,18 +72,32 @@ const initalHamur = [
 ]
 
 const initialData = {
-  "malzemeler": [],
-  "quantity": 1,
-  "extraCost": 0,
-  "totalPrice": 85.50,
-  "note": ""
+  malzemeler: [],
+  quantity: 1,
+  extraCost: 0,
+  totalPrice: 85.50,
+  note: ""
 }
 
-
+const errorMessages = {
+    note: 'Note must be at least 5 characters long'
+  };
 
 function MainForm() {
 
   const [formData, setFormData] = useState(initialData);
+  const [isValid, setIsValid] = useState(false);
+  const [errors, setErrors] = useState({note: false});
+
+  const history = useHistory();
+
+  useEffect(() => {
+    if (formData.note.length >= 5) {
+        setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+  }, [formData])
 
   function handleChange(event) {
     const {type, name, value, checked} = event.target
@@ -104,6 +117,7 @@ function MainForm() {
         }
       }
 
+
       const updatedTotalPrice = (prevData.quantity * 85.50) + newExtrasCost;
 
       return {
@@ -113,6 +127,10 @@ function MainForm() {
         totalPrice: updatedTotalPrice
       };
     });
+
+    if (name === 'note') {
+        setErrors({ ...errors, note: value.length < 5 });
+      }
   }
 
   function handleQuantityChange(amount) {
@@ -128,21 +146,72 @@ function MainForm() {
     });
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!isValid) return;
+
+    // Example of form submission handling
+    console.log("Form submitted", formData);
+  };
+
   return (
-    <>
-        <Size onChange={handleChange} value={initalHamur.name}/>
-        <div className='extra-css'>
-          <h2>Ek Malzemeler</h2>
-          <p className='p-long'>En fazla 10 mazleme seçebilirsiniz. 5TL</p>
-          <div className='size-boyut3'>
-            {extras.map((extra, ind) => (
-            <Extra key={ind} onChange={handleChange} checked={formData.malzemeler.includes(extra.value)} name="malzemeler" value={extra.value} label={extra.label}  />
-            ))}
+    <Form onSubmit={handleSubmit}>
+        <FormGroup>
+            <Size onChange={handleChange} value={initalHamur.name}/>
+        </FormGroup>
+        <FormGroup check>
+            <div className='extra-css'>
+                <h2>Ek Malzemeler</h2>
+                <p className='p-long'>En fazla 10 mazleme seçebilirsiniz. 5TL</p>
+                <div className='size-boyut3'>
+                    {extras.map((extra, ind) => (
+                    <Extra key={ind} onChange={handleChange} checked={formData.malzemeler.includes(extra.value)} name="malzemeler" value={extra.value} label={extra.label}  />
+                 ))}
+                </div>
+            </div>
+        </FormGroup>
+        <div className='note'>
+        <FormGroup>
+        <Label for="note">Sipariş Notu</Label>
+        <Input
+          type="textarea"
+          name="note"
+          id="note"
+          placeholder="Siparişinize eklemek istediğiniz bir not var mı?"
+          onChange={handleChange}
+          value={formData.note}
+          invalid={errors.note}
+        />
+        {errors.note && <FormFeedback>{errorMessages.note}</FormFeedback>}
+      </FormGroup>
+      </div>
+      <div className='bottom-side'>
+      <FormGroup className="quantity-selector">
+        <Button onClick={() => handleQuantityChange(-1)} className="decrement btnn">-</Button>
+        <span className="quantity">{formData.quantity}</span>
+        <Button onClick={() => handleQuantityChange(1)} className="increment btnn">+</Button>
+      </FormGroup>
+      <div className='bottom-most'>
+      <FormGroup>
+        <div className="order-summary">
+          <h3>Sipariş Toplamı</h3>
+          <div className="summary-item">
+            <span>Seçimler</span>
+            <span>{(formData.totalPrice - (formData.quantity * 85.50)).toFixed(2)}₺</span>
           </div>
-        
+          <div className="summary-item total">
+            <span>Toplam</span>
+            <span>{formData.totalPrice.toFixed(2)}₺</span>
+          </div>
         </div>
-        <Note quantity={formData.quantity} totalPrice={formData.totalPrice} onIncrement={() => handleQuantityChange(1)} onDecrement={() => handleQuantityChange(-1)} onChange={handleChange} value={formData.note} />
-      </>
+        <Button disabled={!isValid} className="order-button btnn">
+          SİPARİŞ VER
+        </Button>
+        </FormGroup>        
+      </div>     
+      </div>
+         
+    </Form>
   )
 }
 
