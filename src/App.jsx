@@ -7,6 +7,7 @@ import { Switch, Route, useLocation } from 'react-router-dom';
 
 import MainForm from './MainForm';
 import MainPage from './MainPage';
+import SuccessPage from './SuccessPage';
 
 
 
@@ -21,8 +22,8 @@ function App() {
           <Route path="/orderpage">
             <MainForm />
           </Route>
-          <Route path="successpage">
-
+          <Route path="/successpage">
+            <SuccessPage />
           </Route>
         </Switch>
       </>

@@ -1,6 +1,7 @@
 import './style.css';
 import './reset.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 import {
     Form,
@@ -226,9 +227,11 @@ function MainForm() {
             <span>{formData.totalPrice.toFixed(2)}₺</span>
           </div>
         </div>
-        <Button color='warning' disabled={!isValid} className="order-button btnn">
-          SİPARİŞ VER
-        </Button>
+        <Link to={"/successpage"}>
+          <Button color='warning' disabled={!isValid} className="order-button btnn">
+            SİPARİŞ VER
+          </Button>
+        </Link>
         </FormGroup>        
       </div>     
       </div>
