@@ -298,3 +298,51 @@ h2 {
   color: var(--color-red);
 }
 
+
+
+
+.main-page {
+  background: url(/Assets/Iteration-1-assets/home-banner.png) no-repeat center center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+
+.main-page-h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-page-h1 h1 {
+  color: white;
+  font-family: "Roboto Condensed";
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+.primary-button {
+  background-color: var(--color-yellow);
+  color: var(--color-dark-gray);
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  border: 0;
+  font-weight: bold;
+  padding: 0.8rem 3.5rem;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  font-family: "Roboto Condensed";
+}
+
+.primary-button:hover {
+  opacity: 0.7;
+  background-color: var(--color-light-gray);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 
 import MainForm from './MainForm';
+import MainPage from './MainPage';
 
 
 
@@ -15,12 +16,12 @@ function App() {
       <>
         <Switch>
           <Route exact path="/">
-            <MainForm />
+            <MainPage />
           </Route>
           <Route path="/orderpage">
-
+            <MainForm />
           </Route>
-          <Route path="ordercompleted">
+          <Route path="successpage">
 
           </Route>
         </Switch>
