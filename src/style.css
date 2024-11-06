@@ -387,3 +387,149 @@ h2 {
   text-align: center;
 }
 
+
+
+
+
+/* MOBILE CSS */
+
+
+@media only screen and (max-width: 600px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .h1-main {
+    padding: 20px 0;
+  }
+
+  .h1-content {
+    font-size: 1.5rem;
+  }
+
+  .main {
+    max-width: 100%;
+    padding-top: 20px;
+  }
+
+  .money {
+    font-size: 1.2rem;
+  }
+
+  .second {
+    font-size: 1rem;
+  }
+
+  .p-secondary {
+    padding-bottom: 10px;
+  }
+
+
+  .size-main {
+    flex-direction: column;
+    padding-top: 15px;
+  }
+
+  .size-boyut {
+    gap: 10px;
+  }
+
+  .size-boyut2 {
+    gap: 8px;
+  }
+
+  .size-boyut3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .size-boyut2 label {
+    font-size: 0.9rem;
+  }
+
+  .size-hamur {
+    gap: 10px;
+  }
+
+  .span-hamur {
+    font-size: 1rem;
+  }
+
+  
+  .extra-css, .extra-label, .note {
+    max-width: 100%;
+    padding-top: 20px;
+  }
+
+  .btnn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .quantity-selector {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    align-self:center;
+  }
+
+  .quantity-selector .btnn {
+    padding: 8px 12px;
+  }
+
+  .order-summary {
+    padding: 30px;
+    font-size: 1rem;
+  }
+
+  .summary-item {
+    font-size: 1rem;
+  }
+
+  .order-button {
+    font-size: 1rem;
+  }
+
+  .bottom-most {
+    width: 100%; 
+  }
+
+
+  .main-page {
+    background-size: cover;
+  }
+
+  .main-page-h1 h1 {
+    font-size: 3rem;
+  }
+
+  .primary-button {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+  }
+
+  .button-container {
+    margin-top: 30px;
+  }
+
+
+  .success-page-h1 h1 {
+    font-size: 2.5rem;
+  }
+
+  .h1-main2 {
+    padding: 15px 0;
+  }
+
+  .bottom-side {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
