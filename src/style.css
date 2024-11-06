@@ -157,11 +157,6 @@ h2 {
   gap: 10px; 
 }
 
-.size-boyut3 label {
-  display: flex;
-  align-items: center;
-}
-
 .size-boyut2 label {
   display: flex;
   gap: 10px;
@@ -194,7 +189,6 @@ h2 {
   gap: 10px;
   flex-direction: column;
   padding-top: 40px;
- 
 }
 
 .note {

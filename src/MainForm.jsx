@@ -12,9 +12,8 @@ import {
   } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-
+import Header from './components/Header';
 import Size from './components/Size';
-import Extra from './components/Extra';
 
 
 const extras = [{
@@ -76,11 +75,11 @@ const initialData = {
   quantity: 1,
   extraCost: 0,
   totalPrice: 85.50,
-  note: ""
+  note: "",
 }
 
 const errorMessages = {
-    note: 'Note must be at least 5 characters long'
+    note: 'Note must be at least 5 characters long',
   };
 
 function MainForm() {
@@ -92,7 +91,7 @@ function MainForm() {
   const history = useHistory();
 
   useEffect(() => {
-    if (formData.note.length >= 5) {
+    if (formData.note.length >= 5 && formData.malzemeler.length  >= 4 && formData.malzemeler.length <= 10) {
         setIsValid(true);
     } else {
       setIsValid(false);
@@ -128,10 +127,19 @@ function MainForm() {
       };
     });
 
+    const selectedCount = formData.malzemeler.length + (checked ? 1 : -1);
+        
+        // Set error if less than 4 or more than 10 extras are selected
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            warining: selectedCount < 4 || selectedCount > 10,
+        }));
+
     if (name === 'note') {
         setErrors({ ...errors, note: value.length < 5 });
       }
   }
+  
 
   function handleQuantityChange(amount) {
     setFormData(prevData => {
@@ -150,11 +158,12 @@ function MainForm() {
     event.preventDefault();
     if (!isValid) return;
 
-    // Example of form submission handling
     console.log("Form submitted", formData);
   };
 
   return (
+    <>
+    <Header />
     <Form onSubmit={handleSubmit}>
         <FormGroup>
             <Size onChange={handleChange} value={initalHamur.name}/>
@@ -162,17 +171,29 @@ function MainForm() {
         <FormGroup check>
             <div className='extra-css'>
                 <h2>Ek Malzemeler</h2>
-                <p className='p-long'>En fazla 10 mazleme seçebilirsiniz. 5TL</p>
+                <p className='p-long'>En az 4, en fazla 10 adet ekstra malzeme seçebilirsiniz! 5₺</p>
                 <div className='size-boyut3'>
                     {extras.map((extra, ind) => (
-                    <Extra key={ind} onChange={handleChange} checked={formData.malzemeler.includes(extra.value)} name="malzemeler" value={extra.value} label={extra.label}  />
-                 ))}
+                    <div key={ind} className="extra-checkbox">
+                        <Label>
+                            <Input
+                                type="checkbox"
+                                onChange={handleChange}
+                                checked={formData.malzemeler.includes(extra.value)}
+                                name="malzemeler"
+                                value={extra.value}
+                                invalid={errors.warining}
+                            />
+                            {extra.label}
+                        </Label>
+                    </div>
+                    ))}
                 </div>
             </div>
-        </FormGroup>
+         </FormGroup>
         <div className='note'>
         <FormGroup>
-        <Label for="note">Sipariş Notu</Label>
+        <Label for="note"><h2>Sipariş Notu</h2></Label>
         <Input
           type="textarea"
           name="note"
@@ -204,7 +225,7 @@ function MainForm() {
             <span>{formData.totalPrice.toFixed(2)}₺</span>
           </div>
         </div>
-        <Button disabled={!isValid} className="order-button btnn">
+        <Button color='warning' disabled={!isValid} className="order-button btnn">
           SİPARİŞ VER
         </Button>
         </FormGroup>        
@@ -212,6 +233,7 @@ function MainForm() {
       </div>
          
     </Form>
+    </>
   )
 }
 
