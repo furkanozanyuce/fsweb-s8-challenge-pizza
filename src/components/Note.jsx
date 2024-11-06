@@ -5,20 +5,20 @@ import '../style.css';
 
 
 
-function Note({ quantity, totalPrice, onIncrement, onDecrement }) {
+function Note({ quantity, totalPrice, onIncrement, onDecrement, onChange, value }) {
 
     return (
       <>
         <label className='note'>
           <h2>Sipariş Notu</h2>
-          <textarea name="note" id='note' placeholder='Siparişinize eklemek istediğiniz bir not var mı?' />
+          <textarea name="note" id='note' placeholder='Siparişinize eklemek istediğiniz bir not var mı?'  onChange={onChange} value={value} />
         </label>
 
         <div className='bottom-side'>
           <div className="quantity-selector">
-            <button className="decrement btn" onClick={onDecrement}>-</button>
+            <button className="decrement btnn" onClick={onDecrement}>-</button>
             <span className="quantity">{quantity}</span>
-            <button className="increment btn" onClick={onIncrement}>+</button>
+            <button className="increment btnn" onClick={onIncrement}>+</button>
           </div>
           
           <div className='bottom-most'>
@@ -33,7 +33,7 @@ function Note({ quantity, totalPrice, onIncrement, onDecrement }) {
               <span>{totalPrice.toFixed(2)}₺</span>
             </div>
           </div>
-          <button className="order-button btn">SİPARİŞ VER</button>
+          <button className="order-button btnn">SİPARİŞ VER</button>
           </div>
         </div>
       </>
