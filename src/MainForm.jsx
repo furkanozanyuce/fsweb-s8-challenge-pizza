@@ -129,7 +129,7 @@ function MainForm() {
 
     const selectedCount = formData.malzemeler.length + (checked ? 1 : -1);
         
-        // Set error if less than 4 or more than 10 extras are selected
+      
         setErrors((prevErrors) => ({
             ...prevErrors,
             warining: selectedCount < 4 || selectedCount > 10,
@@ -158,7 +158,7 @@ function MainForm() {
     event.preventDefault();
     if (!isValid) return;
 
-    console.log("Form submitted", formData);
+    console.log(formData);
   };
 
   return (
@@ -168,10 +168,10 @@ function MainForm() {
         <FormGroup>
             <Size onChange={handleChange} value={initalHamur.name}/>
         </FormGroup>
-        <FormGroup check>
-            <div className='extra-css'>
-                <h2>Ek Malzemeler</h2>
+        <FormGroup className='extra-css' check>
+                <Label><h2>Ek Malzemeler</h2>
                 <p className='p-long'>En az 4, en fazla 10 adet ekstra malzeme seçebilirsiniz! 5₺</p>
+                </Label>
                 <div className='size-boyut3'>
                     {extras.map((extra, ind) => (
                     <div key={ind} className="extra-checkbox">
@@ -189,7 +189,6 @@ function MainForm() {
                     </div>
                     ))}
                 </div>
-            </div>
          </FormGroup>
         <div className='note'>
         <FormGroup>

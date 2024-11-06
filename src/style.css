@@ -54,6 +54,11 @@
   font-style: normal;
 }
 
+/* *{
+  border: solid 1px purple;
+} */
+
+
 .h1-main {
   background-color: var(--color-red);
   display: flex;
@@ -154,7 +159,7 @@ h2 {
 .size-boyut3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px; 
+  gap: 10px;
 }
 
 .size-boyut2 label {
@@ -186,9 +191,8 @@ h2 {
   display: flex;
   max-width: 500px;
   margin: 0 auto;
-  gap: 10px;
   flex-direction: column;
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 .note {
@@ -281,3 +285,8 @@ h2 {
 .bottom-most {
   width: 300px;
 }
+
+.www {
+  color: var(--color-red);
+}
+
