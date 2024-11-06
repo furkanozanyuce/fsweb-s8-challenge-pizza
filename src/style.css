@@ -3,9 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -218,11 +218,18 @@ h2 {
   align-items: center;
 }
 
-.btn {
+.btnn {
   background-color: var(--color-yellow);
   border-radius: 5px;
   width: 100%;
   border: none;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.btnn:hover {
+  opacity: 0.7;
 }
 
 .quantity-selector {
@@ -234,7 +241,7 @@ h2 {
   align-self: baseline;
 }
 
-.quantity-selector .btn {
+.quantity-selector .btnn {
   background-color: var(--color-yellow);
   color: var(--color-dark-gray);
   border: none;
@@ -271,7 +278,6 @@ h2 {
 
 .order-button {
   padding: 10px;
-  background-color: var(--color-yellow);
   color:var(--color-dark-gray);
   border: none;
   border-radius: 5px;
