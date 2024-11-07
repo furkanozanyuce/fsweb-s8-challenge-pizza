@@ -37,21 +37,31 @@ function SuccessPage({orderData, extras, initalHamur}) {
                 <img src='/Assets/Iteration-1-assets/logo.svg'></img>
             </div>
             <div className='success-page-h1'>
-                <p>lezzetin yolda</p>
+                <p className='p1'>lezzetin yolda</p>
                 <h1>SİPARİŞ ALINDI</h1>
+                <div className='success-p'>
+                  <p>Position Absolute Acı Pizza</p>
+                </div>
             </div>
-            <div>
+            <div className='order-data'>
               {orderData ? (
                 <div className="order-details">
-                  <p><strong>ID:</strong> {orderData.id}</p>
-                  <p><strong>Sipariş Zamanı:</strong> {new Date(orderData.createdAt).toLocaleString()}</p>
-                  <p><strong>Boyut:</strong> {sizeHarf(orderData.size)}</p>
-                  <p><strong>Hamur Tipi:</strong> {getDough(orderData.dough)}</p>
-                  <p><strong>Adet:</strong> {orderData.quantity}</p>
-                  <p><strong>Ek Malzemeler:</strong> {getLabels(orderData.malzemeler)}</p>
-                  <p><strong>Not:</strong> {orderData.note}</p>
-                  <p><strong>Ek Malzeme Fiyat:</strong> {orderData.extraCost}₺</p>
-                  <p><strong>Toplam Fiyat:</strong> {orderData.totalPrice}₺</p>
+                  <p className='pppp'>Sipariş ID: <strong>{orderData.id}</strong></p>
+                  <p className='pppp'>Sipariş Zamanı: <strong>{orderData.createdAt}</strong></p>
+                  <p className='pppp'>Boyut: <strong>{sizeHarf(orderData.size)}</strong></p>
+                  <p className='pppp'>Hamur Tipi: <strong>{getDough(orderData.dough)}</strong></p>
+                  <p className='pppp'>Adet: <strong>{orderData.quantity}</strong></p>
+                  <p className='pppp'>Ek Malzemeler: <strong>{getLabels(orderData.malzemeler)}</strong></p>
+                  <p className='pppp'>Not: <strong>{orderData.note}</strong></p>
+
+                  <div className='success-main'>
+                    <p>Sipariş Toplamı</p>
+                    <div className='success-price'>
+                    <p>Ek Malzemeler: <strong>{orderData.extraCost}₺</strong></p>
+                    <p>Toplam: <strong>{orderData.totalPrice}₺</strong></p>
+                    </div>
+                  </div>
+
                 </div>
               ) : (<p>Sipariş Yükleniyor, Lütfen Bekleyiniz...</p>)
               }
