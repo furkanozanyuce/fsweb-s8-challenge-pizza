@@ -12,7 +12,7 @@ function Header() {
           </div>
           <div className='h1-content'>
             <div className='nav-css'>
-            <NavLink to="/" activeClassName="selected" className="p-secondary">
+            <NavLink exact to="/" activeClassName="selected" className="p-secondary non-selected">
               Anasayfa
             </NavLink>
             -
