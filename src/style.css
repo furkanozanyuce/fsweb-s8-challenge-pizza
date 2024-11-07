@@ -143,6 +143,12 @@ h2 {
   color: white;
 }
 
+.non-selected {
+  font-weight: lighter;
+  color: white;
+  text-decoration: none;
+}
+
 
 
 /* SIZE CSS */
