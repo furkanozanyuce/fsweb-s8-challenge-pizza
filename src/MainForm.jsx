@@ -77,17 +77,19 @@ const initialData = {
   extraCost: 0,
   totalPrice: 85.50,
   note: "",
+  warning: ""
 }
 
 const errorMessages = {
-    note: 'Note must be at least 5 characters long',
+    note: 'Sipariş notu en az 5 harften oluşabilir!',
+    warining: "En az 4, en fazla 10 adet ekstra malzeme seçebilirsiniz!"
   };
 
 function MainForm() {
 
   const [formData, setFormData] = useState(initialData);
   const [isValid, setIsValid] = useState(false);
-  const [errors, setErrors] = useState({note: false});
+  const [errors, setErrors] = useState({note: false, warining: false});
 
   const history = useHistory();
 
@@ -180,7 +182,7 @@ function MainForm() {
         </FormGroup>
         <div className='extra-label'>
         <Label><h2>Ek Malzemeler</h2>
-                <p className='p-long'>En az 4, en fazla 10 adet ekstra malzeme seçebilirsiniz! 5₺</p>
+                <p className='p-long'>Ek malzemelerinizi seçiniz. 5₺</p>
                 </Label>
         </div>
         <FormGroup className='extra-css' check>
@@ -202,6 +204,7 @@ function MainForm() {
                     ))}
                 </div>
          </FormGroup>
+         {errors.warining && <div className='extra-label www'>{errorMessages.warining}</div>}
         <div className='note'>
         <FormGroup>
         <Label for="note"><h2>Sipariş Notu</h2></Label>

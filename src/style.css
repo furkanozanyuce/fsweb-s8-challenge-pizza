@@ -213,6 +213,10 @@ h2 {
   padding-top: 30px;
 }
 
+.www {
+  color: var(--color-red);
+}
+
 .note {
   display: flex;
   max-width: 500px;
