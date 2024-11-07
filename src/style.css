@@ -94,6 +94,13 @@ h2 {
   color: white;
 }
 
+.nav-css {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
 .p {
   display: flex;
   justify-content: space-between;
@@ -126,16 +133,14 @@ h2 {
   gap: 10px;
 }
 
-.p-secondary {
-  display: flex;
-  margin: 0 auto;
-  max-width: 500px;
-  padding-bottom: 10px;
-  gap: 5px;
-}
-
 .p-long {
   color: var(--color-light-gray);
+}
+
+.selected {
+  font-weight: bold;
+  background-color: var(--color-red);
+  color: white;
 }
 
 

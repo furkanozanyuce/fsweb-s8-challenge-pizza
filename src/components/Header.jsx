@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import '../style.css';
 
 
@@ -10,7 +11,15 @@ function Header() {
             <img src='/Assets/Iteration-1-assets/logo.svg'></img>
           </div>
           <div className='h1-content'>
-          <p className='p-secondary'>Ansayfa - Seçenekler - <strong>Sipariş Oluştur</strong></p>
+            <div className='nav-css'>
+            <NavLink to="/" activeClassName="selected" className="p-secondary">
+              Anasayfa
+            </NavLink>
+            -
+            <NavLink to="/orderpage" activeClassName="selected" className="p-secondary">
+              Sipariş Ver
+            </NavLink>
+            </div>
           </div>
         </div>
 
