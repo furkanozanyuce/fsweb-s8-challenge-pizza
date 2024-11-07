@@ -101,7 +101,6 @@ function MainForm() {
 
   function handleChange(event) {
     const {type, name, value, checked} = event.target
-    console.log(type, name, value, checked)
 
     setFormData(prevData => {
       let newExtrasCost = prevData.extraCost;
@@ -157,9 +156,19 @@ function MainForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!isValid) return;
-
-    console.log(formData);
+    if (!isValid) {
+      console.log("hatalı form");
+      return;
+    }
+    
+    axios.post("https://reqres.in/api/pizza", formData)
+          .then((response) => {
+            console.log(response.data)
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+    history.push("/successpage")
   };
 
   return (
@@ -227,11 +236,9 @@ function MainForm() {
             <span>{formData.totalPrice.toFixed(2)}₺</span>
           </div>
         </div>
-        <Link to={"/successpage"}>
           <Button color='warning' disabled={!isValid} className="order-button btnn">
             SİPARİŞ VER
           </Button>
-        </Link>
         </FormGroup>        
       </div>     
       </div>
