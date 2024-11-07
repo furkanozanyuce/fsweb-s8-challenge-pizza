@@ -11,8 +11,8 @@ function SuccessPage() {
                 <img src='/Assets/Iteration-1-assets/logo.svg'></img>
             </div>
             <div className='success-page-h1'>
-                <h1>TEBRİKLER!</h1>
-                <h1>SİPARİŞİNİZ ALINDI!</h1>
+                <p>lezzetin yolda</p>
+                <h1>SİPARİŞ ALINDI</h1>
             </div>
         </div>
       </>

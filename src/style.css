@@ -368,15 +368,23 @@ h2 {
 .success-page-h1 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100%;
+  margin-top: 50px;
 }
 
 .success-page-h1 h1 {
   color: white;
   font-family: "Roboto Condensed";
   font-size: 4rem;
+  font-weight: 300;
+  transform: scale(1,1.5);
+}
+
+.success-page-h1 p {
+  color: var(--color-yellow);
+  font-family: "Satisfy";
+  font-size: 2rem;
   font-weight: 300;
 }
 
