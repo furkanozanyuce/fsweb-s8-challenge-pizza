@@ -55,7 +55,7 @@ function SuccessPage({orderData, extras, initalHamur}) {
                   <p className='pppp'>Not: <strong>{orderData.note}</strong></p>
 
                   <div className='success-main'>
-                    <p>Sipariş Toplamı</p>
+                    <p className='ppp'>Sipariş Toplamı</p>
                     <div className='success-price'>
                     <p>Ek Malzemeler: <strong>{orderData.extraCost}₺</strong></p>
                     <p>Toplam: <strong>{orderData.totalPrice}₺</strong></p>
