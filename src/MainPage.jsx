@@ -18,7 +18,7 @@ function MainPage() {
                 </div>
                 <div className='button-container'>
                     <Link to={"/orderpage"}>
-                        <button className='primary-button'>ACIKTIM</button>
+                        <button className='primary-button' data-cy="button">ACIKTIM</button>
                     </Link>
                 </div>
             </div>

@@ -204,7 +204,7 @@ function MainForm() {
                     ))}
                 </div>
          </FormGroup>
-         {errors.warining && <div className='extra-label www'>{errorMessages.warining}</div>}
+         {errors.warining && <div data-cy="check-error" className='extra-label www'>{errorMessages.warining}</div>}
         <div className='note'>
         <FormGroup>
         <Label for="note"><h2>Sipariş Notu</h2></Label>
@@ -217,7 +217,7 @@ function MainForm() {
           value={formData.note}
           invalid={errors.note}
         />
-        {errors.note && <FormFeedback>{errorMessages.note}</FormFeedback>}
+        {errors.note && <FormFeedback data-cy="note-error">{errorMessages.note}</FormFeedback>}
       </FormGroup>
       </div>
       <div className='bottom-side'>
