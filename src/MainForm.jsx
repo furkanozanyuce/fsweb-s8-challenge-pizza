@@ -1,7 +1,6 @@
 import './style.css';
 import './reset.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 import {
     Form,
@@ -187,6 +186,7 @@ function MainForm({setOrderData, extras, initalHamur}) {
           {errors.note && <FormFeedback data-cy="note-error">{errorMessages.note}</FormFeedback>}
         </FormGroup>
       </div>
+      
       <div className='bottom-side'>
         <FormGroup className="quantity-selector">
           <Button onClick={() => handleQuantityChange(-1)} className="decrement btnn">-</Button>
