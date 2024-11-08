@@ -6,22 +6,24 @@ function Header() {
 
     return (
       <>
-        <div>
+        <div className='main-main'>
           <div className='h1-main'>
             <img src='/Assets/Iteration-1-assets/logo.svg'></img>
           </div>
+          <div className='color-beige'>
+          <img src="Assets/Iteration-2-aseets/pictures/form-banner.png"/>
           <div className='h1-content'>
             <div className='nav-css'>
             <NavLink exact to="/" activeClassName="selected" className="p-secondary non-selected">
-              Anasayfa
+              <p>Anasayfa</p>
             </NavLink>
-            -
+            <p>-</p>
             <NavLink to="/orderpage" activeClassName="selected" className="p-secondary">
-              Sipariş Ver
+              <p>Sipariş Ver</p>
             </NavLink>
             </div>
           </div>
-        </div>
+        
 
         <div className='main'>
           <div className='secondary'>
@@ -39,6 +41,8 @@ function Header() {
               </p>
           </div>
         </div>
+      </div>
+      </div>
       </>
     )
   }

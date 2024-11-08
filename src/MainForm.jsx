@@ -211,6 +211,55 @@ function MainForm({setOrderData, extras, initalHamur}) {
         </div>     
       </div>
     </Form>
+    <footer>
+        <div className='footer-content'>
+            <div className='left-side'>
+                <img className='wer' src="Assets/Iteration-2-aseets/footer/logo-footer.svg"/>
+                <div className='ul-list'>
+                    <ul>
+                        <li>
+                            <img src="Assets/Iteration-2-aseets/footer/icons/icon-1.png"/>
+                            341 Londonderry Road, Istanbul Türkiye
+                        </li>
+                        <li>
+                            <img src="Assets/Iteration-2-aseets/footer/icons/icon-2.png"/>
+                            aciktim@teknolojikyemekler.com
+                        </li>
+                        <li>
+                            <img src="Assets/Iteration-2-aseets/footer/icons/icon-3.png"/>
+                            +90 216 123 45 67
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className='middle-side'>
+                <p className='footer-titles'>Hot Menu</p>
+                <div className='p-list'>
+                    <p>Terminal Pizza</p>
+                    <p>5 Kişilik Hackathlon Pizza</p>
+                    <p>useEffect Tavuklu Pizza</p>
+                    <p>Beyaz Console Frosty</p>
+                    <p>Testler Geçti Mutlu Burger</p>
+                    <p>Position Absolute Acı Burger</p>
+                </div>
+            </div>
+            <div className='right-side'>
+                <p className='footer-titles'>Instagram</p>
+                <div className='images'>
+                    <img src="Assets/Iteration-2-aseets/footer/insta/li-0.png"/>
+                    <img src="Assets/Iteration-2-aseets/footer/insta/li-1.png"/>
+                    <img src="Assets/Iteration-2-aseets/footer/insta/li-2.png"/>
+                    <img src="Assets/Iteration-2-aseets/footer/insta/li-3.png"/>
+                    <img src="Assets/Iteration-2-aseets/footer/insta/li-4.png"/>
+                    <img src="Assets/Iteration-2-aseets/footer/insta/li-5.png"/>
+                </div>
+            </div>
+        </div>
+        <div className='end'>
+            <p>© 2023 Teknolojik Yemekler.</p>
+            <img src="Assets/Iteration-2-aseets/footer/twitter.svg"/>
+        </div>
+      </footer>
     </>
   )
 }

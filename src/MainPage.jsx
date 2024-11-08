@@ -2,6 +2,7 @@ import './style.css';
 import './reset.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom'
+import FormBottom from './components/FormBottom';
 
 function MainPage() {
 
@@ -23,6 +24,7 @@ function MainPage() {
                 </div>
             </div>
         </div>
+        <FormBottom />
         </>
     )
   }
